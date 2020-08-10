@@ -1,0 +1,19 @@
+{
+  "name": "grafanadataserver",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "devStart": "FILEPATH=/Users/tsaipengying/Desktop/MyUtility/grafanaDataServer/grafanaDataServer/package.json  node ./bin/www",
+    "start": "node ./bin/www",
+    "buildImg": "docker build -f=\"dockerFile\" -t=\"devtooldocker/util:grafanaDataServer\" .",
+    "testImg": "docker run --name grafanaServer --env FILEPATH=/usr/src/app/package.json -d -p 3006:3006 --rm devtooldocker/util:grafanaDataServer"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1"
+  }
+}

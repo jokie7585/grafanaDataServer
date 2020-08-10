@@ -1,0 +1,19 @@
+FROM node:14
+
+ENV TZ=Asia/Taipei
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+RUN npm install
+
+EXPOSE 3006
+
+# build instruction : docker build -f="dockerFile" -t="devtooldocker/util:grafanaDataServer" .    
+
+# to Test dockerImg run following instruction :
+# docker run --name grafanaServer --env FILEPATH=/usr/src/app/package.json -d -p 3006:3006 --rm devtooldocker/util:grafanaDataServer
+
+# Env can Set: FILEPATH, PORT
