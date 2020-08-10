@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "devStart": "FILEPATH=/Users/tsaipengying/Desktop/MyUtility/grafanaDataServer/grafanaDataServer/package.json  node ./bin/www",
+    "devStart": "FILEPATH=./package.json  node ./bin/www",
     "start": "node ./bin/www",
     "buildImg": "docker build -f=\"dockerFile\" -t=\"devtooldocker/util:grafanaDataServer\" .",
     "testImg": "docker run --name grafanaServer --env FILEPATH=/usr/src/app/package.json -d -p 3006:3006 --rm devtooldocker/util:grafanaDataServer npm run start"
